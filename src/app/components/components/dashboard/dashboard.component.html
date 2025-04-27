@@ -1,0 +1,27 @@
+<div class="dashboard">
+    <h2>Your Dashboard</h2>
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Total Memes</h3>
+        <p>{{ stats.totalMemes }}</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Votes</h3>
+        <p>{{ stats.totalVotes }}</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Views</h3>
+        <p>{{ stats.totalViews }}</p>
+      </div>
+    </div>
+    <h3>Your Memes</h3>
+    <div class="meme-grid">
+      <app-meme-card
+        *ngFor="let meme of memes"
+        [meme]="meme"
+        (deleted)="onMemeUpdated()"
+        (edited)="onMemeUpdated()"
+      ></app-meme-card>
+      <p *ngIf="!memes.length">You haven't created any memes yet. <a routerLink="/create">Create one now!</a></p>
+    </div>
+  </div>

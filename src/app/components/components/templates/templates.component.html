@@ -1,0 +1,9 @@
+<div class="templates">
+    <h4>Choose a Template</h4>
+    <div class="template-grid">
+      <div *ngFor="let template of templates" class="template-item" (click)="selectTemplate(template.url)">
+        <img [src]="template.url" [alt]="template.name">
+        <p>{{ template.name }}</p>
+      </div>
+    </div>
+  </div>

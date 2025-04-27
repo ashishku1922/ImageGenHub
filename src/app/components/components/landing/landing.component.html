@@ -1,0 +1,16 @@
+<div class="landing">
+    <h2>Welcome to ImageGenHub!</h2>
+    <p>Create, share, and vote on awesome memes!</p>
+    <app-trending></app-trending>
+    <app-search (search)="onSearch($event)"></app-search>
+    <div class="sort-tabs">
+      <button [class.active]="sortBy === 'new'" (click)="setSortBy('new')">New</button>
+      <button [class.active]="sortBy === 'top-daily'" (click)="setSortBy('top-daily')">Top Daily</button>
+      <button [class.active]="sortBy === 'top-weekly'" (click)="setSortBy('top-weekly')">Top Weekly</button>
+      <button [class.active]="sortBy === 'top-all-time'" (click)="setSortBy('top-all-time')">Top All-Time</button>
+    </div>
+    <div class="meme-grid">
+      <app-meme-card *ngFor="let meme of memes" [meme]="meme"></app-meme-card>
+    </div>
+    <button *ngIf="hasMore" (click)="loadMore()" class="load-more">Load More</button>
+  </div>

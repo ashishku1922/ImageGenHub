@@ -1,0 +1,61 @@
+<div class="create-meme">
+    <h2>Create Your Meme</h2>
+    <p>Unleash your inner meme lord!</p>
+    <div class="meme-editor">
+      <div class="form-section image-section">
+        <h3>Image</h3>
+        <div class="input-group">
+          <input type="file" accept="image/*" (change)="onFileChange($event)">
+          <span class="input-highlight"></span>
+        </div>
+        <app-templates (templateSelected)="onTemplateSelect($event)"></app-templates>
+      </div>
+      <div class="form-section text-section">
+        <h3>Text</h3>
+        <div class="input-group text-input">
+          <input [(ngModel)]="topText" placeholder="Top Text" (input)="updatePreview()">
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group text-input">
+          <input [(ngModel)]="bottomText" placeholder="Bottom Text" (input)="updatePreview()">
+          <span class="input-highlight"></span>
+        </div>
+      </div>
+      <div class="form-section styling-section">
+        <h3>Text Styling</h3>
+        <div class="input-group">
+          <label>Font Size (px)</label>
+          <input type="number" [(ngModel)]="fontSize" min="10" max="50" (input)="updatePreview()">
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group">
+          <label>Font Color</label>
+          <input type="color" [(ngModel)]="fontColor" (input)="updatePreview()">
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group">
+          <label>Top Text Y Position (px)</label>
+          <input type="number" [(ngModel)]="topTextY" min="0" max="100" (input)="updatePreview()">
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group">
+          <label>Bottom Text Y Position (px)</label>
+          <input type="number" [(ngModel)]="bottomTextY" min="0" max="100" (input)="updatePreview()">
+          <span class="input-highlight"></span>
+        </div>
+      </div>
+      <div class="preview-section">
+        <h3>Preview</h3>
+        <div class="preview-frame">
+          <img *ngIf="previewImage" [src]="previewImage" alt="Meme Preview">
+          <p *ngIf="!previewImage">Upload an image to see the preview</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="gradient-btn save-draft" (click)="saveDraft()">Save Draft</button>
+        <button class="gradient-btn clear" (click)="clearDraft()">Clear</button>
+        <button class="gradient-btn publish" (click)="publish()">Publish</button>
+      </div>
+      <p *ngIf="error" class="error">{{ error }}</p>
+    </div>
+  </div>

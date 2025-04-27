@@ -1,0 +1,11 @@
+<div class="flag">
+    <button (click)="toggleForm()" class="flag-btn" title="Flag Meme">⚠️</button>
+    <div *ngIf="showForm" class="flag-form">
+      <textarea [(ngModel)]="reason" placeholder="Reason for flagging (e.g., inappropriate content)"></textarea>
+      <div class="flag-actions">
+        <button (click)="submitFlag()">Submit</button>
+        <button (click)="toggleForm()">Cancel</button>
+      </div>
+      <p *ngIf="error" class="error">{{ error }}</p>
+    </div>
+  </div>

@@ -1,0 +1,82 @@
+.landing {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 24px;
+  
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+  
+    p {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 24px;
+      color: #666;
+    }
+  
+    .sort-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+  
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #f0f2f5;
+        color: #333;
+        transition: background-color 0.2s ease;
+  
+        &.active {
+          background-color: #1a73e8;
+          color: white;
+        }
+  
+        &:hover {
+          background-color: #e0e2e5;
+        }
+      }
+    }
+  
+    .meme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Changed from auto-fill to 3 columns */
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+  
+    .load-more {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #1a73e8;
+      color: white;
+      transition: background-color 0.2s ease;
+  
+      &:hover {
+        background-color: #1557b0;
+      }
+    }
+  
+    /* Responsive design for smaller screens */
+    @media (max-width: 900px) {
+      .meme-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+      }
+    }
+  
+    @media (max-width: 600px) {
+      .meme-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+      }
+    }
+  }

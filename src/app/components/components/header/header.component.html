@@ -1,0 +1,18 @@
+<header class="header">
+    <div class="container">
+      <h1>ImageGenHub</h1>
+      <nav>
+        <a routerLink="/">Home</a>
+        <ng-container *ngIf="user$ | async as user; else guestLinks">
+          <a routerLink="/create">Create Meme</a>
+          <a routerLink="/dashboard">Dashboard</a>
+          <span>Welcome, {{ user.username }}</span>
+          <a (click)="logout()" class="logout">Logout</a>
+        </ng-container>
+        <ng-template #guestLinks>
+          <a routerLink="/signup">Signup</a>
+          <a routerLink="/login">Login</a>
+        </ng-template>
+      </nav>
+    </div>
+  </header>

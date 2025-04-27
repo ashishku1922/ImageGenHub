@@ -1,0 +1,49 @@
+<div class="signup-container">
+    <div class="signup-card">
+      <h2>Create Your Account</h2>
+      <p>Join the meme revolution!</p>
+      <form class="signup-form" (ngSubmit)="signup()">
+        <div class="input-group">
+          <input
+            id="username"
+            type="text"
+            [(ngModel)]="username"
+            name="username"
+            placeholder="Enter username"
+            required
+            minlength="3"
+            maxlength="20"
+          >
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group">
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          >
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group">
+          <input
+            id="password"
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            placeholder="Enter password"
+            required
+            minlength="6"
+          >
+          <span class="input-highlight"></span>
+        </div>
+        <button type="submit" class="gradient-btn">Sign Up</button>
+        <p *ngIf="error" class="error">{{ error }}</p>
+      </form>
+      <div class="footer">
+        <p>Already have an account? <a routerLink="/login">Log in</a></p>
+      </div>
+    </div>
+  </div>

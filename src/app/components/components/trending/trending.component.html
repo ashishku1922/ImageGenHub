@@ -1,0 +1,18 @@
+<div class="trending">
+    <h3>Trending & Highlights</h3>
+    <div class="trending-grid">
+      <div class="trending-item">
+        <h4>Meme of the Day</h4>
+        <app-meme-card *ngIf="memeOfTheDay" [meme]="memeOfTheDay"></app-meme-card>
+        <p *ngIf="!memeOfTheDay">No memes created today yet!</p>
+      </div>
+      <div class="trending-item">
+        <h4>Weekly Champion</h4>
+        <div class="champion-wrapper" *ngIf="weeklyChampion">
+          <div class="badge">🏆</div>
+          <app-meme-card [meme]="weeklyChampion"></app-meme-card>
+        </div>
+        <p *ngIf="!weeklyChampion">No memes created this week yet!</p>
+      </div>
+    </div>
+  </div>
