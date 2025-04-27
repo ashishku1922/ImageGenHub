@@ -1,59 +1,47 @@
-# ImageGenHub
+# ImageGenHub – Community Meme Generator & Voting
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+**ImageGenHub** is a web platform where users can create, share, vote, and comment on memes. It's designed for meme lovers, especially developers, to generate and customize memes using images and text, while also being able to interact with others by voting and commenting on memes.
 
-## Development server
+## 🎯 Project Overview
 
-To start a local development server, run:
+This project allows users to:
+- **Generate memes** by uploading images or selecting from a template gallery.
+- **Add custom text** (top and bottom captions) to the images, with live preview and customization options for font size, color, and position.
+- **Vote on memes** (upvote/downvote) based on the meme's content and community engagement.
+- **Comment** on memes and engage with others in discussions.
+- **Sort memes** based on various filters, such as "Top (24h)", "Top (Week)", and "Top (All Time)".
+- **Browse trending memes** like the **Meme of the Day** and **Weekly Champion** based on votes.
+- **Create and manage memes** in a personal dashboard, including stats like votes, comments, and views.
 
-```bash
-ng serve
-```
+## 👥 Key Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 1. **Meme Creation Studio**
+- **Upload Image**: Users can upload their own images or pick from a pre-existing template gallery.
+- **Text Overlays**: Add top and bottom text with live preview.
+- **Customizable Text**: Adjust font size, color, and position for both top and bottom text.
+- **Save Draft & Publish**: Save your meme as a draft to come back later or publish it for others to see.
 
-## Code scaffolding
+### 2. **Voting & Commenting**
+- **Upvote/Downvote**: Every user can vote once on each meme. The votes are linked to user accounts.
+- **Comments**: Each meme has a 140-character comment section for feedback and discussion.
+- **Flag Inappropriate Content**: Users can flag memes that violate community guidelines.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 3. **Feed & Sorting**
+- **New**: View the latest memes uploaded by the community.
+- **Top (24h)**: Browse the top memes from the past 24 hours.
+- **Top (Week)**: View the memes with the highest votes over the last week.
+- **Top (All Time)**: Check out the best memes of all time, as voted by users.
+- **Infinite Scroll** or **Load More**: View more memes with smooth scrolling.
 
-```bash
-ng generate component component-name
-```
+### 4. **Creator Dashboard**
+- **My Memes**: A dashboard to manage all your memes. Check stats like votes, comments, and views.
+- **Edit/Delete**: Edit the captions or delete memes you no longer want to keep.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 5. **Trending & Highlights**
+- **Meme of the Day**: The meme with the highest net votes since midnight gets highlighted.
+- **Weekly Champion**: The meme with the most votes for the week receives a special badge and recognition.
 
-```bash
-ng generate --help
-```
+## 🔐 Authentication & Authorization
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Login Required**: To create, vote, or comment on memes, users need to log in.
+- **Guest Browsing**: Guests can browse memes but cannot interact (vote, comment, create).
